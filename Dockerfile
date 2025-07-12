@@ -1,5 +1,5 @@
 # Builder is ubuntu-based because we need i386 libs
-FROM steamcmd/steamcmd:ubuntu-22 as builder
+FROM sonroyaalmerol/steamcmd-arm64:steam-bookworm as builder
 
 # Install prerequisites to download steamcmd
 RUN apt-get update \
