@@ -1,11 +1,10 @@
 # Builder is ubuntu-based because we need i386 libs
-FROM sonroyaalmerol/steamcmd-arm64:steam-bookworm as builder
-
-RUN id
+FROM sonroyaalmerol/steamcmd-arm64:root-bookworm as builder
 
 # Install prerequisites to download steamcmd
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl tar
+RUN su steam
 WORKDIR /root/installer
 
 # Download and unpack installer
